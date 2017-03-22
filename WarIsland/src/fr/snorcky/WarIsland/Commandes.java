@@ -6,13 +6,17 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class Commandes implements CommandExecutor {
+	
+	private FileConfiguration config;
+	private Main plugin;
 
-
-	public Commandes(Main main) {
-
+	public Commandes(Main pl) {
+		this.plugin = pl;
+		this.config = pl.getConfig();
 	}
 
 	@Override
@@ -25,9 +29,9 @@ public class Commandes implements CommandExecutor {
 				if(args[0].equalsIgnoreCase("create")){
 					Random random = new Random();
 					
-					int x = p.getLocation().getBlockX() + random.nextInt(10);
-					int y = p.getLocation().getBlockY() + random.nextInt(250);
-					int z = p.getLocation().getBlockZ() + random.nextInt(10);
+					int x = p.getLocation().getBlockX() + random.nextInt(config.getInt("coords.x"));
+					int y = p.getLocation().getBlockY() + random.nextInt(config.getInt("coords.y"));
+					int z = p.getLocation().getBlockZ() + random.nextInt(config.getInt("coords.z"));
 					
 					Location aleatoire = new Location(p.getWorld(), x,y,z);
 					
