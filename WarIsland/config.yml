@@ -1,5 +1,10 @@
 #Configurations
 
+messages:
+ teleport-message: '&bVous avez été téléporté'
+
+world:
+ world-name: 'world_nether'
 
 coords:
  x: 10
