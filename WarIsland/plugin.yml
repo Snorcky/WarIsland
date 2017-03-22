@@ -1,0 +1,8 @@
+name: WarIsland
+author: Snorcky
+version: 1.0
+description: Batailles d'iles
+main: fr.snorcky.WarIsland.Main
+commands:
+ wi:
+  description: wi
